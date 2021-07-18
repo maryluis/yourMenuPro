@@ -1,6 +1,7 @@
 import {url} from "./index";
 
 async function addDish(data) {
+
     const response =   await fetch(url, {
         method: 'POST',
         headers: {

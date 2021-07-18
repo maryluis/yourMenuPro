@@ -18,11 +18,12 @@ function objToArr(obj) {
     this.type = type;
 }
 
-function dish(name="", type, ingredients){
+function dish(name="", type, ingredients, comment){
 
   this.name = name;
   this.type = type;
   this.ingredients = ingredients;
+  this.comment = comment;
 }
 
 export {ingredients, dish, objToArr};

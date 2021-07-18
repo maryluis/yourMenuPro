@@ -13,6 +13,7 @@ const DishForm = (data) => {
     const [numberGoods, changeNumber] = useState([0]);
     const [dishTitle, changeTitle] = useState(null);
     const [dishType, changeType] = useState("1");
+    const [comment, changeComment] = useState(null);
 
 
 
@@ -49,13 +50,13 @@ const DishForm = (data) => {
 
 
                 </div>
+                <div>
+                    <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
+                </div>
                 <button  type="submit" onClick = {(e) => {e.preventDefault()
-                addDish(new dish(dishTitle, dishType, data.data))}}>Створити</button>
+                addDish(new dish(dishTitle, dishType, data.data, comment))}}>Створити</button>
             </form>
 
-            
-                    <button onClick = {(e) => { e.preventDefault() 
-                    addDish(data.data)}}>Checck</button>
         </div>
     )
 }
