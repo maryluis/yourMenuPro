@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import {connect} from 'react-redux';
-import {goodAdd} from "../redux"
 import {bindActionCreators, } from 'redux';
 import {COneIngredient} from "./index";
-import {ingredients, dish, objToArr} from "../tools";
+import {dish, addDish} from "../tools";
 
 
 
@@ -51,12 +50,12 @@ const DishForm = (data) => {
 
                 </div>
                 <button  type="submit" onClick = {(e) => {e.preventDefault()
-                console.log(new dish(dishTitle, dishType, data.data))}}>Створити</button>
+                addDish(new dish(dishTitle, dishType, data.data))}}>Створити</button>
             </form>
 
             
                     <button onClick = {(e) => { e.preventDefault() 
-                    console.log(data.data)}}>Checck</button>
+                    addDish(data.data)}}>Checck</button>
         </div>
     )
 }
@@ -69,7 +68,7 @@ const mapStateToProps = state => ({
 
   
   const mapDispatchToProps = dispatch => bindActionCreators({
-    onAdd: goodAdd,
+    // onAdd: goodAdd,
     // addDish: dish,
   }, dispatch);
   

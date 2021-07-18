@@ -1,6 +1,3 @@
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import thunk from 'redux-thunk';
-import {delay} from "../tools";
 
 
 
@@ -19,7 +16,6 @@ function goodsCreator(state, {type, title,  id, howMany, ofWhat, goodType,}) {
             
         }
     }
-
     return state;
 }
 

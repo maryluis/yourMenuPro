@@ -1,9 +1,9 @@
 
 function objToArr(obj) {
-  debugger
+
   let newArr = [];
   for(let key in obj) {
-    newArr.push(obj.key);
+    newArr.push(obj[key]);
   } ;
   return newArr;
 }
@@ -15,7 +15,7 @@ function objToArr(obj) {
     this.name = name;
     this.howMany = howMany;
     this.ofWhat = ofWhat;
-    this. type = type;
+    this.type = type;
 }
 
 function dish(name="", type, ingredients){

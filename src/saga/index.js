@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest, all} from 'redux-saga/effects';
+import { takeLatest, all} from 'redux-saga/effects';
 import createSagaMiddleware from "redux-saga";
 import {delay} from "../tools";
 

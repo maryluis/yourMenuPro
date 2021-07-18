@@ -1,9 +1,5 @@
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import thunk from 'redux-thunk';
-import createSagaMiddleware from "redux-saga";
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {goodsCreator, goodAdd} from "./goodsCreator";
-import {delay} from "../tools";
-import { call, put, takeEvery, takeLatest, all} from 'redux-saga/effects';
 import {SagaMiddleware, rootSaga} from "../saga";
 
 

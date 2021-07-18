@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 import {goodAdd} from "../redux"
 import {bindActionCreators, } from 'redux';
-// import OneDish from './oneDish';
-// import {ingredients, dish} from "../tools/dishesCreator";
 
 
 
-const OneIngredient = ({state, count, onAdd, id}) => {
+
+const OneIngredient = ({ onAdd, id}) => {
 
 
 
@@ -18,7 +17,7 @@ const OneIngredient = ({state, count, onAdd, id}) => {
 
     useEffect( () => { 
         onAdd(name, id, howMany, ofWhat, goodType);
-        }, [name, howMany, ofWhat, goodType]);
+        }, [name, id, onAdd, howMany, ofWhat, goodType]);
 
     
 
