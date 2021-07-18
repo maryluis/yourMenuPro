@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+
+
+* {
+  font-family: 'PT Serif', serif;
+}
+body {
+  background-image: url(./images/body/family-2923690_1920.jpg);
+
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  background-color: rgb(175, 173, 168);
+  margin: 5px;
+  border-radius: 5%;
+  border: 1px solid  rgb(223, 215, 194);
+}
+input:focus {
+  background-color:  rgb(223, 221, 217);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+select {
+  background-color: rgb(175, 173, 168);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+select:focus {
+  background-color:  rgb(223, 221, 217);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+textarea {
+  background-color: rgb(175, 173, 168);
+  width: 70%;
+  height: 60px;
+  border-radius: 5%;
+  border: 1px solid  rgb(223, 215, 194);
+}
+
+button {
+  background-color: rgb(99, 97, 92);
+  height: 30px;
+  margin: 5px;
+  border: 1px solid rgb(153, 112, 7);;
+  border-radius: 10%;
+}
+button:hover {
+  background-color: rgb(175, 173, 168);
+}
+
+textarea:focus {
+  background-color:  rgb(223, 221, 217);
+}
+
+.createDishForm {
+  background-color: rgb(146, 143, 138);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 70%;
+}
+.createDishForm span {
+  font-size: 12px;
+}
+.createDishForm h4 {
+  margin: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.createDishForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.createDishForm form input {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mainInput {
+  width: 70%;
+  height: 25px;
+}
+
+.toIngr {
+  border-bottom: 2px solid rgb(99, 97, 92);
+}
+.oneIngrForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgb(99, 97, 92);
+}
+
+.oneIngrForm span {
+  margin: 5px;
+}
+
+.spaceBetween {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

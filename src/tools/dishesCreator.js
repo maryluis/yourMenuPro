@@ -18,7 +18,7 @@ function objToArr(obj) {
     this.type = type;
 }
 
-function dish(name="", type, ingredients, comment){
+function dish(name="", type, ingredients, comment=null){
 
   this.name = name;
   this.type = type;

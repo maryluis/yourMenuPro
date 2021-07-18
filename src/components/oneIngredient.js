@@ -23,44 +23,37 @@ const OneIngredient = ({ onAdd, id}) => {
 
 
     return (
-        <div>
+        <div className = "oneIngrForm">
 
-        <input type="text"  placeholder = "Назва інгредінту" onChange = {(e) => changeTittle(e.target.value)}/>
-        <input type="number" placeholder="скільки" onChange = {(e) => changeNumber(e.target.value)}/>
-        <span>
-        <span>Чого</span>
-            <select onChange = {(e) => changeWhat(e.target.value)}> 
-                <option>гр</option>
-                <option>шт</option>
-                <option>банка</option>
-                <option>зубчиів</option>
-                <option>пачка</option>
-                <option>ст.л</option>
-                <option>пляшка</option>
-                <option>голівка</option>
-            </select>
-        </span>
+            <input type="text"  placeholder = "Назва інгредінту" onChange = {(e) => changeTittle(e.target.value)}/>
+            <input type="number" placeholder="скільки" onChange = {(e) => changeNumber(e.target.value)}/>
+            <span className = "spaceBetween">
+                <span>чого</span>
+                <select onChange = {(e) => changeWhat(e.target.value)}> 
+                    <option>гр</option>
+                    <option>шт</option>
+                    <option>банка</option>
+                    <option>зубчиів</option>
+                    <option>пачка</option>
+                    <option>ст.л</option>
+                    <option>пляшка</option>
+                    <option>голівка</option>
+                </select>
+            </span>
 
-        <span>
-            <span>Тип продукту</span>
-            <select onChange = {(e) => changeType(e.target.value)}> 
-                <option value="1">Овочі\фрукти</option>
-                <option value="2">М'ясо</option>
-                <option value="3">Молочний продукт</option>
-                <option value="4">Консерви</option>
-                <option value="5">Крупи</option>
-                <option value="6">Спеції</option>
-                <option value="7">Інше</option>
-            </select>
-        </span>
-        {/* <button onClick = { () => {
-            
-            console.log(state)
-        }
-            
-        }>check</button> */}
-
-       
+            <span className = "spaceBetween">
+                <span>тип продукту</span>
+                <select onChange = {(e) => changeType(e.target.value)}> 
+                    <option value="1">Овочі\фрукти</option>
+                    <option value="2">М'ясо</option>
+                    <option value="3">Молочний продукт</option>
+                    <option value="4">Консерви</option>
+                    <option value="5">Крупи</option>
+                    <option value="6">Спеції</option>
+                    <option value="7">Інше</option>
+                </select>
+            </span>
+      
         </div>
     )
 }

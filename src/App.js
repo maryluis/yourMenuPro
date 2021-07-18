@@ -9,7 +9,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <CDishForm/>
+      <main className="main">
+        <CDishForm/>
+      </main>
     </Provider>
     // <>
     // <OneDish tittle = "Борщ" goodsArr = {

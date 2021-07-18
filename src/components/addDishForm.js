@@ -20,13 +20,13 @@ const DishForm = (data) => {
     
     
     return(
-        <div>
-            <h3>Створення нового блюда</h3>
+        <div className="createDishForm">
+            <h2>Створення нового блюда</h2>
 
-            <form>
 
-            <input type="text"  placeholder="Назва кулінарного шедевра"onChange = {(e) => changeTitle(e.target.value)}/>
-            <span>Тип блюда</span>
+
+            <input type="text" className = "mainInput" placeholder="Назва кулінарного шедевра"onChange = {(e) => changeTitle(e.target.value)}/>
+            <h4>Тип блюда</h4>
             <select onChange = {(e) => changeType(e.target.value)}> 
                 <option value="1">Перша страва</option>
                 <option value="2">Друга страва</option>
@@ -38,9 +38,9 @@ const DishForm = (data) => {
                 <option value="8">Інше</option>
             </select>
 
+            <h4 className = "toIngr">Що потрібно:</h4>
 
                 <div>
-                    <h5>Що потрібно</h5>
 
                     {numberGoods.map((number) => <COneIngredient key = {number} id = {number}/>)}
 
@@ -50,12 +50,12 @@ const DishForm = (data) => {
 
 
                 </div>
-                <div>
-                    <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
-                </div>
+
+                <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
+
                 <button  type="submit" onClick = {(e) => {e.preventDefault()
                 addDish(new dish(dishTitle, dishType, data.data, comment))}}>Створити</button>
-            </form>
+
 
         </div>
     )
