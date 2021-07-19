@@ -1,6 +1,8 @@
-import { takeLatest, all} from 'redux-saga/effects';
+import { takeLatest, all, takeEvery, put, call} from 'redux-saga/effects';
 import createSagaMiddleware from "redux-saga";
-import {delay} from "../tools";
+import {delay, getDishes} from "../tools";
+import {actionPutDishes} from "../redux";
+//import { getDishes } from '../redux';
 
 
 function* addIngr(){ //worker saga
@@ -13,11 +15,24 @@ function* checkIngr(){ //watcher saga
 }
 
 
+function * dishesGetter() {
+
+    const data = yield call(getDishes);
+
+    yield put(actionPutDishes(data));
+}
+
+function* dishesChecker(){ //watcher saga
+    yield takeEvery('GET_DISHES', dishesGetter) //
+}
+
+
 function* rootSaga(){ //корневая
     yield all([
-        checkIngr()
+        checkIngr(), dishesChecker()
     ])
 }
+
 
 
 const SagaMiddleware = createSagaMiddleware();

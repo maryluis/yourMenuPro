@@ -1,6 +1,6 @@
 
 import './App.css';
-import {CDishForm} from "./components";
+import {CDishList, Header, Footer} from "./components";
 import {Provider} from 'react-redux';
 import {store} from "./redux";
 
@@ -9,9 +9,11 @@ function App() {
 
   return (
     <Provider store={store}>
+      <Header/>
       <main className="main">
-        <CDishForm/>
+        <CDishList/>
       </main>
+      <Footer/>
     </Provider>
     // <>
     // <OneDish tittle = "Борщ" goodsArr = {

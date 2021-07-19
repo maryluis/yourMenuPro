@@ -43,17 +43,18 @@ const DishForm = (data) => {
                 <div>
 
                     {numberGoods.map((number) => <COneIngredient key = {number} id = {number}/>)}
-
-                    <button onClick = {(e) => { 
-                        e.preventDefault();
-                        changeNumber([...numberGoods, numberGoods.length])}}>Додати інгредієнт</button>
+                    <div className = "btnCenter" >
+                        <button onClick = {(e) => { 
+                            e.preventDefault();
+                            changeNumber([...numberGoods, numberGoods.length])}}>Додати інгредієнт</button>
+                    </div>
 
 
                 </div>
 
                 <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
 
-                <button  type="submit" onClick = {(e) => {e.preventDefault()
+                <button type="submit" onClick = {(e) => {e.preventDefault()
                 addDish(new dish(dishTitle, dishType, data.data, comment))}}>Створити</button>
 
 
