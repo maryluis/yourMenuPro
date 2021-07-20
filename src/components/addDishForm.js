@@ -2,7 +2,8 @@ import { useState } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators, } from 'redux';
 import {COneIngredient} from "./index";
-import {dish, addDish} from "../tools";
+import {dish, addDish, checkInclude} from "../tools";
+
 
 
 
@@ -11,7 +12,7 @@ import {dish, addDish} from "../tools";
 const DishForm = (data) => {
 
     const [numberGoods, changeNumber] = useState([0]);
-    const [dishTitle, changeTitle] = useState(null);
+    const [dishTitle, changeTitle] = useState("");
     const [dishType, changeType] = useState("1");
     const [comment, changeComment] = useState(null);
 
@@ -51,11 +52,20 @@ const DishForm = (data) => {
 
 
                 </div>
+                <button onClick = {() => console.log(data.data)}></button>
 
                 <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
 
-                <button type="submit" onClick = {(e) => {e.preventDefault()
-                addDish(new dish(dishTitle, dishType, data.data, comment))}}>Створити</button>
+                <button disabled = {dishTitle.length < 2 || !data.data || checkInclude(data.data, ['title', 'howMany'])} type="submit" onClick = {
+                    (e) => {
+                        e.preventDefault();
+                        let goods = {...data.data}
+                        for(let key in goods) {
+                            if(goods[key].title.length === 0 || goods[key].howMany.length === 0) {
+                                delete goods[key]
+                            }
+                        }
+                        addDish(new dish(dishTitle, dishType, goods, comment))}}>Створити</button>
 
 
         </div>
@@ -70,8 +80,6 @@ const mapStateToProps = state => ({
 
   
   const mapDispatchToProps = dispatch => bindActionCreators({
-    // onAdd: goodAdd,
-    // addDish: dish,
   }, dispatch);
   
   const CDishForm = connect(mapStateToProps, mapDispatchToProps)(DishForm);

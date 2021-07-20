@@ -10,13 +10,15 @@ const OneIngredient = ({ onAdd, id}) => {
 
 
 
-    const [name, changeTittle] = useState(null);
-    const [howMany, changeNumber] = useState(null);
+    const [name, changeTittle] = useState("");
+    const [howMany, changeNumber] = useState(0);
     const [ofWhat, changeWhat] = useState("гр");
     const [goodType, changeType] = useState("1");
 
     useEffect( () => { 
+    
         onAdd(name, id, howMany, ofWhat, goodType);
+        
         }, [name, id, onAdd, howMany, ofWhat, goodType]);
 
     

@@ -16,6 +16,8 @@ function goodsCreator(state, {type, title,  id, howMany, ofWhat, goodType,}) {
             
         }
     }
+
+
     return state;
 }
 
