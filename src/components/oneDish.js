@@ -2,16 +2,17 @@
 
 
 
-const OneDish = ({tittle, goodsArr}) => {
+const OneDish = ({title, goodsArr}) => {
     return (
-        <div>
-            <h3>{tittle}</h3>
+        <div className = "createDishForm oneDish">
+            <h3>{title}</h3>
             <ul>
                 {goodsArr.map(good => 
-                    <li key={good.name}> 
-                        <span>{good.name}</span>
-                        <span>{good.howMany}</span>
-                        <span>{good.ofWhat}</span>
+                    <li key={good.title}> 
+                        <span className = "spaceBetween">
+                            <span>{good.title} </span>
+                            <span>{good.howMany} {good.ofWhat}</span>
+                        </span>
                      </li>
                 )}
 

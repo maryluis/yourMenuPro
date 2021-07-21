@@ -3,7 +3,8 @@ function objToArr(obj) {
 
   let newArr = [];
   for(let key in obj) {
-    newArr.push(obj[key]);
+    
+    newArr.push({id: key, dish: obj[key],});
   } ;
   return newArr;
 }
