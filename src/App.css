@@ -140,13 +140,23 @@ textarea:focus {
 }
 .oneDish ul {
   padding: 0%;
-  /* width: 80%; */
 }
 .oneDish span span {
   padding: 5px;
 }
 .paddingOver {
   padding: 10px;
+}
+.marginOver {
+  margin: 15px;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marginOverSmall {
+  margin: 5px;
 }
 .recepyCard {
   position: absolute;

@@ -11,10 +11,10 @@ const DishList = ({dishes, getData}) => {
 
     }, [getData])
     return(
-        <div>
+        <div className = "flexRow">
             {dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} title = {dish.dish.name} goodsArr = {dish.dish.ingredients} comment = {dish.dish.comment}/>)}
-            <button onClick = {() => console.log(dishes[0].dish.comment.replace('\n', '<br>'))}>Check</button>
+            <button onClick = {() => console.log(dishes[1])}>Check</button>
         </div>
     )
 }

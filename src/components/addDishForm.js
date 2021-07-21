@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators, } from 'redux';
 import {COneIngredient} from "./index";
 import {dish, addDish, checkInclude} from "../tools";
+import {useHistory} from 'react-router-dom';
 
 
 
@@ -15,6 +16,7 @@ const DishForm = (data) => {
     const [dishTitle, changeTitle] = useState("");
     const [dishType, changeType] = useState("1");
     const [comment, changeComment] = useState(null);
+    const history = useHistory();
 
 
 
@@ -57,7 +59,7 @@ const DishForm = (data) => {
                 <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
 
                 <button disabled = {dishTitle.length < 2 || !data.data || checkInclude(data.data, ['title', 'howMany'])} type="submit" onClick = {
-                    (e) => {
+                    async (e) => {
                         e.preventDefault();
                         let goods = {...data.data}
                         for(let key in goods) {
@@ -65,7 +67,8 @@ const DishForm = (data) => {
                                 delete goods[key]
                             }
                         }
-                        addDish(new dish(dishTitle, dishType, goods, comment))}}>Створити</button>
+                       await addDish(new dish(dishTitle, dishType, goods, comment))
+                        history.push("/dishes-list/")}}>Створити</button>
 
 
         </div>

@@ -17,7 +17,7 @@ const OneDish = ({title, goodsArr, comment = false}) => {
     const [recepy, openRecepy] = useState(false);
 
     return (
-        <div className = "createDishForm oneDish">
+        <div className = "createDishForm oneDish marginOver">
             <h3>{title}</h3>
             <ul>
                 {goodsArr.map(good => 
@@ -30,7 +30,7 @@ const OneDish = ({title, goodsArr, comment = false}) => {
                 )}
 
             </ul>
-            <button onClick = {() => openRecepy(!recepy)}>Докладніше</button>
+            {comment && <button disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
             {recepy && <Recepy recepy = {comment} onClose = {openRecepy}></Recepy>}
             <button>Готуватиму!</button>
         </div>
