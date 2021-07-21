@@ -13,8 +13,8 @@ const DishList = ({dishes, getData}) => {
     return(
         <div>
             {dishes && dishes.map((dish) => 
-                <OneDish key = {dish.id} title = {dish.dish.name} goodsArr = {dish.dish.ingredients}/>)}
-            <button onClick = {() => console.log(dishes)}>Check</button>
+                <OneDish key = {dish.id} title = {dish.dish.name} goodsArr = {dish.dish.ingredients} comment = {dish.dish.comment}/>)}
+            <button onClick = {() => console.log(dishes[0].dish.comment.replace('\n', '<br>'))}>Check</button>
         </div>
     )
 }

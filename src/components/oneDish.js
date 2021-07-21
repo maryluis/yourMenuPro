@@ -1,8 +1,21 @@
+import { useState } from "react";
 
 
 
+const Recepy = ({recepy, onClose}) => {
 
-const OneDish = ({title, goodsArr}) => {
+    return(
+        <div className = "createDishForm oneDish recepyCard paddingOver">
+            <p dangerouslySetInnerHTML={{__html: recepy.replaceAll('\n', '<br>')}}/>
+            <button onClick = {() => onClose(false)}>Сховати</button>
+        </div>
+    )
+}
+
+
+const OneDish = ({title, goodsArr, comment = false}) => {
+    const [recepy, openRecepy] = useState(false);
+
     return (
         <div className = "createDishForm oneDish">
             <h3>{title}</h3>
@@ -17,6 +30,8 @@ const OneDish = ({title, goodsArr}) => {
                 )}
 
             </ul>
+            <button onClick = {() => openRecepy(!recepy)}>Докладніше</button>
+            {recepy && <Recepy recepy = {comment} onClose = {openRecepy}></Recepy>}
             <button>Готуватиму!</button>
         </div>
     )
