@@ -2,12 +2,12 @@ import { takeLatest, all, takeEvery, put, call} from 'redux-saga/effects';
 import createSagaMiddleware from "redux-saga";
 import {delay, getDishes} from "../tools";
 import {actionPutDishes} from "../redux";
-//import { getDishes } from '../redux';
+import checkDishBask from "./sagaBasketDish";
+
 
 
 function* addIngr(){ //worker saga
     yield delay(1000);
-    // console.log(state)
 }
 
 function* checkIngr(){ //watcher saga
@@ -29,12 +29,13 @@ function* dishesChecker(){ //watcher saga
 
 function* rootSaga(){ //корневая
     yield all([
-        checkIngr(), dishesChecker()
+        checkIngr(), dishesChecker(), checkDishBask()
     ])
 }
 
 
 
 const SagaMiddleware = createSagaMiddleware();
+
 
 export {SagaMiddleware, rootSaga};

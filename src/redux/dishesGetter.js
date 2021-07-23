@@ -13,6 +13,8 @@ function dishesGetter(state = {}, action) {
 const actionPutDishes = (payload) => {
 
     return({type: 'PUT_DISHES', payload})};
+
+    
 const actionGetDishes = () => ({type: 'GET_DISHES'});
 
 
