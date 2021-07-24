@@ -2,6 +2,7 @@ import {ingredients, dish, objToArr} from "./dishesCreator";
 import addDish from "./addNewDish";
 import getDishes from "./getDishes";
 import { checkInclude } from "./checkers";
+import {standartList} from "./createGoodsList";
 
 
 
@@ -14,4 +15,4 @@ const delay = ms => new Promise(ok => setTimeout(() => ok(ms), ms));
 
 
 
-export {ingredients, objToArr, checkInclude, dish, delay, url, addDish, getDishes};
+export {ingredients, standartList, objToArr, checkInclude, dish, delay, url, addDish, getDishes};

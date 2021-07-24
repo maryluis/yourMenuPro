@@ -13,11 +13,11 @@ const Recepy = ({recepy, onClose}) => {
 }
 
 
-const OneDish = ({dish, dishOff, putDish, dishClear, state}) => {
+const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
     const [recepy, openRecepy] = useState(false);
 
     return (
-        <div className = "createDishForm oneDish marginOver">
+        <div className = "createDishForm oneDish marginOver spaceBetweenCoulum">
             <h3>{dish.dish.name}</h3>
             <ul>
                 {dish.dish.ingredients.map(good => 
@@ -33,13 +33,13 @@ const OneDish = ({dish, dishOff, putDish, dishClear, state}) => {
             {dish.dish.comment && <button disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
             {recepy && <Recepy recepy = {dish.dish.comment} onClose = {openRecepy}></Recepy>}
 
-            <button onClick = {() =>  {                  
-                putDish(dish.id, dish.dish)
-                }}>Готуватиму!</button>
-
+            <button onClick = {() =>  {
+                basket[dish.id] ? dishOff(dish.id, dish.dish) : putDish(dish.id, dish.dish);                           
+                }}>{basket[dish.id] ? "Не готуватиму!" : "Готуватиму!" }</button>
+{/* 
             <button onClick = {() =>  {             
                 dishOff(dish.id, dish.dish)
-                }}>Не готуватиму!</button>
+                }}>Не готуватиму!</button> */}
 
             <button onClick = {() =>  {  
              

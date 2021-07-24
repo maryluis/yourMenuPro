@@ -5,16 +5,16 @@ function dishesGetter(state = {}, action) {
     if(action.type === 'PUT_DISHES') {
         
             return {...state, 
-                    dishes:action.payload.data}
+                    dishes:action.payload.data};
     }
-      return state
+      return state;
 }
 
 const actionPutDishes = (payload) => {
 
     return({type: 'PUT_DISHES', payload})};
 
-    
+
 const actionGetDishes = () => ({type: 'GET_DISHES'});
 
 

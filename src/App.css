@@ -111,6 +111,11 @@ textarea:focus {
   margin: 5px;
 }
 
+.spaceBetweenCoulum {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 .mainInput {

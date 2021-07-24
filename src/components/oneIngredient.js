@@ -28,7 +28,7 @@ const OneIngredient = ({ onAdd, id}) => {
         <div className = "oneIngrForm">
 
             <input type="text"  placeholder = "Назва інгредінту" onChange = {(e) => changeTittle(e.target.value)}/>
-            <input type="number" placeholder="скільки" onChange = {(e) => changeNumber(e.target.value)}/>
+            <input type="number" placeholder="скільки" onChange = {(e) => changeNumber(+e.target.value)}/>
             <span className = "spaceBetween">
                 <span>чого</span>
                 <select onChange = {(e) => changeWhat(e.target.value)}> 
