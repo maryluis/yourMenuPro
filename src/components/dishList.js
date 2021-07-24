@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { actionGetDishes, dishAdd, clearDishes, dishDelete } from '../redux';
+import { actionGetDishes, actionStandartList, dishAdd, clearDishes, dishDelete } from '../redux';
 import { OneDish } from '.';
 import { bindActionCreators } from 'redux';
-import { objToArr, standartList } from '../tools';
+import { objToArr } from '../tools';
 
 
 
-    const DishList = ({dishes, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
+    const DishList = ({dishes, createList, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
     useEffect(() => { 
         getData()
 
@@ -17,7 +17,7 @@ import { objToArr, standartList } from '../tools';
             {dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData.dishes} putDish = {dishToBask} comment = {dish.dish.comment}/>)}
             <button onClick = {() => console.log(state)}>Check</button>
-            <button onClick = {() => standartList(bask)}>List</button>
+            <button onClick = {() => createList(bask)}>List</button>
         </div>
     )
 }
@@ -32,7 +32,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     getData: actionGetDishes,
     dishToBask: dishAdd,
     dishOffBask: dishDelete,
-    clearBask: clearDishes
+    clearBask: clearDishes,
+    createList: actionStandartList
 }, dispatch);
 
 const CDishList = connect(mapStateToProps, mapDispatchToProps)(DishList);

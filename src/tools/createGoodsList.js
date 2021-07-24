@@ -64,7 +64,7 @@ function standartList(obj) {
     let newObj = {titles: titles,
                     ingredients: ingrList};
     console.log(newObj);
-
+        return newObj;
 }
 
 

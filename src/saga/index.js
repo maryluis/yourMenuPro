@@ -3,6 +3,7 @@ import createSagaMiddleware from "redux-saga";
 import {delay, getDishes} from "../tools";
 import {actionPutDishes} from "../redux";
 import checkDishBask from "./sagaBasketDish";
+import {dishesListChecker} from "./sagaStandartList"
 
 
 
@@ -23,13 +24,13 @@ function * dishesGetter() {
 }
 
 function* dishesChecker(){ //watcher saga
-    yield takeEvery('GET_DISHES', dishesGetter) //
+    yield takeEvery('GET_DISHES', dishesGetter); //
 }
 
 
 function* rootSaga(){ //корневая
     yield all([
-        checkIngr(), dishesChecker(), checkDishBask()
+        checkIngr(), dishesChecker(), checkDishBask(), dishesListChecker()
     ])
 }
 
