@@ -1,20 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { actionGetDishes, actionStandartList, dishAdd, clearDishes, dishDelete } from '../redux';
 import { OneDish } from '.';
 import { bindActionCreators } from 'redux';
-import { objToArr } from '../tools';
+import { objToArr, delay } from '../tools';
 
 
 
     const DishList = ({dishes, createList, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
-    useEffect(() => { 
-        getData()
+        const [isLoading, changeLoad] = useState(false);
+        useEffect(() => { 
+            changeLoad(true);
+            delay(5000);
+            getData()
+            changeLoad(false);
 
-    }, [getData])
+        }, [getData])
     return(
-        <div className = "flexRow">
-            {dishes && dishes.map((dish) => 
+         <div className = "flexRow flexWrap">
+        {isLoading && <div className="spinner-grow text-secondary spinnetWidth" role="status"/>}
+            {!isLoading && dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData.dishes} putDish = {dishToBask} comment = {dish.dish.comment}/>)}
             <button onClick = {() => console.log(state)}>Check</button>
             <button onClick = {() => createList(bask)}>List</button>

@@ -1,5 +1,6 @@
-import { CDishList, CDishForm } from ".";
-import {Route, Switch} from 'react-router-dom';
+import { CDishList, CDishForm, CBasket } from ".";
+import {Route, Switch, useHistory} from 'react-router-dom';
+
 
 
 
@@ -10,6 +11,7 @@ const Main = () => {
             <Switch>
                 <Route path = "/dishes-list/" component ={CDishList}/>
                 <Route path = "/create-dish/" component ={CDishForm}/>
+                <Route path = "/dishes-bask" component ={CBasket}/>
                 <Route path = "/" component ={DefaultMain} exact/>
             </Switch>
         </main>
@@ -17,13 +19,25 @@ const Main = () => {
 }
 
 const DefaultMain = () => {
-
+    const history = useHistory()
     return(
-        <div className = "createDishForm">
-            gisdo[unnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-            esrlksjglkrjegjreoigjoierrj[oivjeo[ojtijtiojotjeotjiov 
-            ar'jveosrgovesrgoerognboergniowegionetnweiontiowenronv 
-            l;regno;vergovewerotivwerotjwveortjvweiotp]]]
+        <div className = "createDishForm paddingOver">
+            <p>Привіт! Ласкаво просимо на сторінку ЩироСмакуй. Ми за те,
+                щоб щиро ділитися рецептами та зручно складати списки продуктів
+                для найщиріших страв. А в цьому допоможе наш сервіс. 
+            </p>
+            <p>
+                Це найперша версія нашого сервісу. Ви можете додати свій смачнючій рецепт,
+                обрати рецепт з тих, що вже є на сайті та скласти список продуктів автоматично.
+            </p>
+            <p>
+                Це небагатий функціонал, та ми не збираємось на цьому зупинятись.
+                Нумо щиро смакувати!
+            </p>
+            <div className = "flexRow">
+                <button onClick = {() => history.push("/dishes-list/")}>До щирих страв</button>
+                <button onClick = {() => history.push("/create-dish/")}>Додати нову страву</button>
+            </div>
         </div>
     )
 }

@@ -17,8 +17,8 @@ const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
     const [recepy, openRecepy] = useState(false);
 
     return (
-        <div className = "createDishForm oneDish marginOver spaceBetweenCoulum">
-            <h3>{dish.dish.name}</h3>
+        <div className = "createDishForm oneDish marginOver spaceBetweenCoulum paddingOver">
+            <h4 className = "textCenter">{dish.dish.name}</h4>
             <ul>
                 {dish.dish.ingredients.map(good => 
                     <li key={good.title}> 
@@ -41,10 +41,10 @@ const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
                 dishOff(dish.id, dish.dish)
                 }}>Не готуватиму!</button> */}
 
-            <button onClick = {() =>  {  
+            {/* <button onClick = {() =>  {  
              
                 dishClear()
-                }}>Очистити</button>
+                }}>Очистити</button> */}
 
 
         </div>

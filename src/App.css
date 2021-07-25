@@ -37,12 +37,36 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: black;
+}
+
+.spinnetWidth {
+  margin-top: 100px;
+  width: 150px;
+  height: 150px;
+}
+.textCenter {
+  display: flex;
+  text-align: center;
+}
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  min-height: 630px;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
 }
 input {
   background-color: rgb(175, 173, 168);
@@ -165,7 +189,6 @@ textarea:focus {
 }
 .recepyCard {
   position: absolute;
-  /* width: 300px; */
   background-color: rgba(241, 195, 195);
 }
 .oneDish p {
@@ -180,6 +203,7 @@ textarea:focus {
 .flexRow {
   display: flex;
   padding: 0%;
+  margin: 0%;
 }
 .divVertical {
   display: flex;
