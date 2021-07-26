@@ -1,5 +1,6 @@
 import { CDishList, CDishForm, CBasket } from ".";
 import {Route, Switch, useHistory} from 'react-router-dom';
+import CShopList from "./shopList";
 
 
 
@@ -12,6 +13,7 @@ const Main = () => {
                 <Route path = "/dishes-list/" component ={CDishList}/>
                 <Route path = "/create-dish/" component ={CDishForm}/>
                 <Route path = "/dishes-bask" component ={CBasket}/>
+                <Route path = "/shop-list/" component ={CShopList}/>
                 <Route path = "/" component ={DefaultMain} exact/>
             </Switch>
         </main>

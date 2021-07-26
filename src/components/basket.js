@@ -12,7 +12,6 @@ const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
         {dishes.length > 0 &&
             <div className = "flexColumn">
                 <div className = "flexRow flexWrap">
-                    {/* <button onClick = {() => console.log(state)}>Check</button> */}
                     {bask && dishes.map((dish) => 
                         <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData}  comment = {dish.dish.comment}/>)}
                 </div>

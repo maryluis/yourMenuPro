@@ -63,6 +63,7 @@ a:hover {
   align-items: center;
   margin-top: 50px;
   min-height: 630px;
+  margin-bottom: 50px;
 }
 .flexColumn {
   display: flex;
@@ -170,6 +171,12 @@ textarea:focus {
 .oneDish ul {
   padding: 0%;
 }
+.noPadding {
+  padding: 0%;
+}
+.numbers {
+  list-style:circle;
+}
 .oneDish span span {
   padding: 5px;
 }
@@ -200,6 +207,11 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
 }
+.alignCenter {
+  display: flex;
+  align-items: center;
+}
+
 .flexRow {
   display: flex;
   padding: 0%;
@@ -209,6 +221,7 @@ textarea:focus {
   display: flex;
   justify-content: center;
 }
+
 
 header ul {
   list-style: none;

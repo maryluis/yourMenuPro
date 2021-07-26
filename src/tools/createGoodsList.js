@@ -29,7 +29,6 @@ function shortList(arr) {
 
     }
     shortList.push(firstList[firstList.length-1]);
-    console.log(shortList)
     return shortList;
 }
 
@@ -63,7 +62,6 @@ function standartList(obj) {
     let ingrList = shortList(newIngr);
     let newObj = {titles: titles,
                     ingredients: ingrList};
-    console.log(newObj);
         return newObj;
 }
 

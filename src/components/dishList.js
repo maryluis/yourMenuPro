@@ -21,8 +21,6 @@ import { objToArr, delay } from '../tools';
         {isLoading && <div className="spinner-grow text-secondary spinnetWidth" role="status"/>}
             {!isLoading && dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData.dishes} putDish = {dishToBask} comment = {dish.dish.comment}/>)}
-            <button onClick = {() => console.log(state)}>Check</button>
-            <button onClick = {() => createList(bask)}>List</button>
         </div>
     )
 }
