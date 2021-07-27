@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
-import {goodAdd} from "../redux"
+import {goodAdd, asyncGoodAdd} from "../redux"
 import {bindActionCreators, } from 'redux';
 
 
@@ -17,6 +17,7 @@ const OneIngredient = ({ onAdd, id}) => {
 
     useEffect( () => { 
     
+        
         onAdd(name, id, howMany, ofWhat, goodType);
         
         }, [name, id, onAdd, howMany, ofWhat, goodType]);
@@ -68,7 +69,7 @@ const mapStateToProps = state => ({
 
   
   const mapDispatchToProps = dispatch => bindActionCreators({
-    onAdd: goodAdd,
+    onAdd: asyncGoodAdd,
   }, dispatch);
   
   const COneIngredient = connect(mapStateToProps, mapDispatchToProps)(OneIngredient);

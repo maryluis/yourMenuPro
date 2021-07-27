@@ -1,18 +1,19 @@
 import { takeLatest, all, takeEvery, put, call} from 'redux-saga/effects';
 import createSagaMiddleware from "redux-saga";
 import {delay, getDishes} from "../tools";
-import {actionPutDishes} from "../redux";
+import {actionPutDishes, goodAdd} from "../redux";
 import checkDishBask from "./sagaBasketDish";
 import {dishesListChecker} from "./sagaStandartList"
 
 
 
-function* addIngr(){ //worker saga
+function* addIngr(data){ //worker saga
     yield delay(1000);
+    yield put(goodAdd(data));
 }
 
 function* checkIngr(){ //watcher saga
-    yield takeLatest('ADD_GOOD', addIngr) //
+    yield takeLatest('ASYNC_ADD_GOOD', addIngr) //
 }
 
 

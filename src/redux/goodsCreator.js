@@ -1,18 +1,19 @@
 
 
 
-function goodsCreator(state, {type, title,  id, howMany, ofWhat, goodType,}) {
+function goodsCreator(state, {type, data}) {
 
     if(state === undefined) {
         state = {};
     }
     if(type === 'ADD_GOOD') {
+
         state = {
             ...state,
-            [id]: {title: title,
-                    howMany: howMany,
-                    ofWhat: ofWhat,
-                    goodType: goodType},
+            [data.data.id]: {title: data.data.title,
+                    howMany: data.data.howMany,
+                    ofWhat: data.data.ofWhat,
+                    goodType: data.data.goodType},
             
         }
     }
@@ -22,14 +23,20 @@ function goodsCreator(state, {type, title,  id, howMany, ofWhat, goodType,}) {
 }
 
 
-const goodAdd = (title, id, howMany, ofWhat, goodType, type,) => ({
+const goodAdd = (data) => ({
+
     type: 'ADD_GOOD',
+    data: data
+
+});
+const asyncGoodAdd = (title, id, howMany, ofWhat, goodType, type,) => ({
+    type: 'ASYNC_ADD_GOOD', data:{
     id,
     title,
     howMany,
     ofWhat,
     goodType
-
+    }
 });
 
-export {goodsCreator, goodAdd};
+export {goodsCreator, goodAdd, asyncGoodAdd};

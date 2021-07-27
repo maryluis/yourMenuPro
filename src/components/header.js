@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { useState } from 'react';
 
 
 const ToBasket = ({bask}) => {
@@ -27,13 +28,45 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 const CToBasket = connect(mapStateToProps, mapDispatchToProps)(ToBasket);
 
-
-const Header = () => {
-
+const CoulumnMenu = () => {
     return(
-        <header className = "spaceBetween">
-            <div className = "divVertical">
-                <Link to = "/">
+        <div>
+                <ul className = "flexCoulumn absoluteMenu greyBachground">
+                    <li className = "borderBottom">
+                        <Link to = "/">
+                            На головну
+                        </Link>
+                    </li>
+                    <li className = "borderBottom">
+                        <Link to = "/dishes-list/">
+                            Обрати смачнючі страви
+                        </Link>
+                    </li>
+                    <li className = "borderBottom">
+                        <Link to = "/create-dish/">
+                            Додати смачнючу страву
+                        </Link>
+                    </li>
+                </ul>
+        </div>
+    )
+}
+
+const TabletMenu = () => {
+    const [show, setShow] = useState(false);
+    return(
+        <div className = "forSmallSize">
+            <img onClick = {() => setShow(!show)} alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
+            {show && <CoulumnMenu/>}
+        </div>
+
+    )
+}
+
+const BigMenu = () => {
+    return(
+        <div className = "divVertical forBigSize">
+                <Link className = "" to = "/">
                     <img alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
                 </Link>
                 {/* <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-justify" viewBox="0 0 16 16">
@@ -53,6 +86,16 @@ const Header = () => {
                     </li>
                 </ul>
             </div>
+    )
+}
+
+
+const Header = () => {
+
+    return(
+        <header className = "spaceBetween">
+            <BigMenu/>
+            <TabletMenu/>
             <CToBasket/>
 
         </header>

@@ -10,12 +10,12 @@ const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
     return(
         <>
         {dishes.length > 0 &&
-            <div className = "flexColumn">
+            <div className = "flexColumn marginForSmall">
                 <div className = "flexRow flexWrap">
                     {bask && dishes.map((dish) => 
                         <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData}  comment = {dish.dish.comment}/>)}
                 </div>
-                <div className = "flexRow flexCenter">
+                <div className = "flexRow flexCenter flexWrap">
                     <button onClick = {() => clearBask()}>Перехотілося</button>
                     <button onClick = {() => {
                         createList(bask)

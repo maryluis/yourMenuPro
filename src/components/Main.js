@@ -36,7 +36,7 @@ const DefaultMain = () => {
                 Це небагатий функціонал, та ми не збираємось на цьому зупинятись.
                 Нумо щиро смакувати!
             </p>
-            <div className = "flexRow">
+            <div className = "flexRow flexWrap">
                 <button onClick = {() => history.push("/dishes-list/")}>До щирих страв</button>
                 <button onClick = {() => history.push("/create-dish/")}>Додати нову страву</button>
             </div>

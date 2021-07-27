@@ -23,7 +23,7 @@ const DishForm = (data) => {
     
     
     return(
-        <div className="createDishForm">
+        <div className="createDishForm marginForSmall">
             <h2>Створення нового блюда</h2>
 
 
