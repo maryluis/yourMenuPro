@@ -23,7 +23,7 @@ const DishForm = (data) => {
     
     
     return(
-        <div className="createDishForm marginForSmall">
+        <div className="createDishForm marginForSmall marginBottom">
             <h2>Створення нового блюда</h2>
 
 
@@ -54,7 +54,7 @@ const DishForm = (data) => {
 
 
                 </div>
-                <button onClick = {() => console.log(data.data)}></button>
+                
 
                 <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Як готувати? (за бажанням)"></textarea>
 

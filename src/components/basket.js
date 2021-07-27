@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { objToArr } from '../tools';
-import { actionStandartList, clearDishes, dishDelete } from '../redux';
+import { actionStandartList, asyncClearDishes, asyncDishDelete } from '../redux';
 
 const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
     const history = useHistory();
@@ -25,7 +25,7 @@ const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
             </div>
         }
         {dishes.length === 0 && 
-            <div className="createDishForm">
+            <div className="createDishForm paddingOver">
                 <p>
                     Ой, ви ще не обрали жодного блюда. 
                     Перейдіть до списка рецептів, або....(далі буде)
@@ -45,8 +45,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    dishOffBask: dishDelete,
-    clearBask: clearDishes,
+    dishOffBask: asyncDishDelete,
+    clearBask: asyncClearDishes,
     createList: actionStandartList
 }, dispatch);
 

@@ -1,18 +1,23 @@
-import { takeEvery } from "redux-saga/effects";
+import { takeEvery, put } from "redux-saga/effects";
+import {clearDishes, dishAdd, dishDelete} from "../redux"
 
 
 
-function* addDishBask() {
-    // debugger
-    // yield put(dishAdd());
-    // yield dishDelete(type, dish);
-    // yield clearDishes(type, dish);
+function* addDishBask(data) {
+     yield put(dishAdd(data.id, data.dish));
+}
+
+function* deleteDishBask(data) {
+    yield put(dishDelete(data.id, data.dish));
+}
+
+function* clearBasket() {
+    yield put(clearDishes());
 }
 
 function* checkDishBask() {
-
-    yield takeEvery('DISH_ADD', addDishBask);
-    // yield put('DISH_DELETE', addDishBask);
-    // yield put('CLEAR_DISHES', addDishBask);
+    yield takeEvery('ASYNC_DISH_ADD', addDishBask);
+    yield takeEvery('ASYNC_DISH_DELETE', deleteDishBask);
+    yield takeEvery('ASYNC_CLEAR_DISHES', clearBasket);
 }
 export default checkDishBask; 

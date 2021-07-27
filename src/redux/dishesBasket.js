@@ -18,21 +18,39 @@ function dishesBasket(state, {type, id, dish}) {
     return state
 }
 
-
+const asyncDishAdd = (id, dish) => ({
+    
+    type: "ASYNC_DISH_ADD",
+    id: id,
+    dish: dish
+})
 
 const dishAdd = (id, dish) => ({
     type: 'DISH_ADD',
     id,
     dish
 })
-const dishDelete = (id, dish, type) => ({
+
+const asyncDishDelete = (id, dish) => ({
+    type:"ASYNC_DISH_DELETE",
+    id,
+    dish
+})
+
+const dishDelete = (id, dish) => ({
     type:"DISH_DELETE",
     id,
     dish
 })
-const clearDishes = (type) => ({
+
+const asyncClearDishes = () => ({
+    type: "ASYNC_CLEAR_DISHES"
+})
+
+const clearDishes = () => ({
     type: "CLEAR_DISHES"
 })
 
 
-export {dishesBasket, dishAdd, dishDelete, clearDishes}
+
+    export {dishesBasket, asyncDishAdd, dishAdd, asyncDishDelete, dishDelete, asyncClearDishes, clearDishes}

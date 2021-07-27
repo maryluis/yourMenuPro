@@ -2,7 +2,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {goodsCreator, goodAdd, asyncGoodAdd} from "./goodsCreator";
 import {SagaMiddleware, rootSaga} from "../saga";
 import {dishesGetter, actionGetDishes, actionPutDishes} from "./dishesGetter";
-import {dishesBasket, dishAdd, dishDelete, clearDishes} from "./dishesBasket";
+import {dishesBasket, asyncDishAdd, dishAdd, asyncDishDelete, dishDelete, asyncClearDishes, clearDishes} from "./dishesBasket";
 import {dishesListReducer, actionPutStandartList, actionStandartList} from "./dishesList";
 
 
@@ -19,5 +19,5 @@ const store = createStore(combineReducers({
 
 SagaMiddleware.run(rootSaga) //запуск
 
-export {store, goodsCreator, asyncGoodAdd, goodAdd, dishesGetter, actionGetDishes, actionPutDishes, dishesBasket, dishAdd, dishDelete, clearDishes, dishesListReducer, actionPutStandartList, actionStandartList};
+export {store, goodsCreator, asyncGoodAdd, goodAdd, asyncDishDelete, asyncClearDishes, dishesGetter, actionGetDishes, actionPutDishes, dishesBasket, dishAdd, asyncDishAdd, dishDelete, clearDishes, dishesListReducer, actionPutStandartList, actionStandartList};
 

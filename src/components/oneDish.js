@@ -5,7 +5,7 @@ import { useState } from "react";
 const Recepy = ({recepy, onClose}) => {
 
     return(
-        <div className = "createDishForm oneDish recepyCard paddingOver">
+        <div className = "createDishForm recepyCard paddingOver noBorderRadius">
             <p dangerouslySetInnerHTML={{__html: recepy.replaceAll('\n', '<br>')}}/>
             <button onClick = {() => onClose(false)}>Сховати</button>
         </div>

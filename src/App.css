@@ -36,12 +36,24 @@ a {
   color: black;
   text-decoration: none;
 }
+.smallBorder {
+  border: 2px solid black;
+  border-top: none;
+}
+.marginBottom {
+  margin-bottom: 20px;
+}
+.borderTop {
+  border-top: 1px solid black;
+}
 
 a:hover {
   color: black;
 }
-
-.spinnetWidth {
+.zIndexUp {
+  z-index: 1;
+}
+.spinnerWidth {
   margin-top: 100px;
   width: 150px;
   height: 150px;
@@ -125,7 +137,7 @@ textarea:focus {
 
 .createDishForm {
   margin-top: 20px;
-  background-color: rgb(146, 143, 138, 0.7);
+  background-color: rgb(146, 143, 138, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +165,9 @@ textarea:focus {
   width: 70%;
   height: 25px;
 }
-
+.noBorderRadius {
+  border-radius: 0%;
+}
 .toIngr {
   border-bottom: 2px solid rgb(99, 97, 92);
 }
@@ -173,6 +187,7 @@ textarea:focus {
   width: 220px;
   background-color: rgb(146, 143, 138);
   border-radius: 15%;
+  position: relative;
 }
 .oneDish ul {
   padding: 0%;
@@ -208,7 +223,9 @@ textarea:focus {
 }
 .recepyCard {
   position: absolute;
-  background-color: rgba(241, 195, 195);
+  top: 25%;
+  width: 110%;
+  background-color: rgba(243, 222, 222, 0.9);
 }
 .oneDish p {
   font-size: 10px;

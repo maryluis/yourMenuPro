@@ -31,7 +31,7 @@ const CToBasket = connect(mapStateToProps, mapDispatchToProps)(ToBasket);
 const CoulumnMenu = () => {
     return(
         <div>
-                <ul className = "flexCoulumn absoluteMenu greyBachground">
+                <ul className = "smallBorder flexCoulumn absoluteMenu greyBachground">
                     <li className = "borderBottom">
                         <Link to = "/">
                             На головну
@@ -69,9 +69,7 @@ const BigMenu = () => {
                 <Link className = "" to = "/">
                     <img alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
                 </Link>
-                {/* <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-justify" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                </svg> */}
+
 
                 <ul className = "flexRow">
                     <li>
@@ -93,7 +91,7 @@ const BigMenu = () => {
 const Header = () => {
 
     return(
-        <header className = "spaceBetween">
+        <header className = "spaceBetween zIndexUp borderBottom">
             <BigMenu/>
             <TabletMenu/>
             <CToBasket/>

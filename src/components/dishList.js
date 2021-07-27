@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { actionGetDishes, actionStandartList, dishAdd, clearDishes, dishDelete } from '../redux';
+import { actionGetDishes, actionStandartList, asyncDishAdd, clearDishes, asyncDishDelete } from '../redux';
 import { OneDish } from '.';
 import { bindActionCreators } from 'redux';
 import { objToArr, delay } from '../tools';
@@ -33,8 +33,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     getData: actionGetDishes,
-    dishToBask: dishAdd,
-    dishOffBask: dishDelete,
+    dishToBask: asyncDishAdd,
+    dishOffBask: asyncDishDelete,
     clearBask: clearDishes,
     createList: actionStandartList
 }, dispatch);
