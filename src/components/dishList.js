@@ -17,7 +17,7 @@ import { objToArr, delay } from '../tools';
 
         }, [getData])
     return(
-         <div className = "flexRow flexWrap marginForSmall">
+         <div className = "dishList flexRow flexWrap marginForSmall">
         {isLoading && <div className="spinner-grow text-secondary spinnetWidth" role="status"/>}
             {!isLoading && dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData.dishes} putDish = {dishToBask} comment = {dish.dish.comment}/>)}

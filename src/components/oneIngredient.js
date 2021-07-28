@@ -36,7 +36,7 @@ const OneIngredient = ({ onAdd, id}) => {
                     <option>гр</option>
                     <option>шт</option>
                     <option>банка</option>
-                    <option>зубчиів</option>
+                    <option>зубчиків</option>
                     <option>пачка</option>
                     <option>ст.л</option>
                     <option>пляшка</option>

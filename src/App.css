@@ -27,7 +27,6 @@ footer {
   background-color: rgb(146, 143, 138);
   height: 50px;
   width: 100%;
-  position: fixed;
   left: 0%;
   right: 0%;
   bottom: 0px;
@@ -51,7 +50,7 @@ a:hover {
   color: black;
 }
 .zIndexUp {
-  z-index: 1;
+  z-index: 2;
 }
 .spinnerWidth {
   margin-top: 100px;
@@ -134,7 +133,10 @@ button:hover {
 textarea:focus {
   background-color:  rgb(223, 221, 217);
 }
-
+.iconSize {
+  width: 20px;
+  height: 20px;
+}
 .createDishForm {
   margin-top: 20px;
   background-color: rgb(146, 143, 138, 0.85);
@@ -178,7 +180,9 @@ textarea:focus {
   justify-content: center;
   border-bottom: 2px solid rgb(99, 97, 92);
 }
-
+.textEnd {
+  text-align: end;
+}
 .oneIngrForm span {
   margin: 5px;
 }
@@ -280,11 +284,75 @@ header li {
   }
   .absoluteMenu {
     position: absolute;
-    top: 50px;
+    top: 35px;
     left: -35px;
   }
   .marginForSmall {
     margin-top: 50px;
   }
-  
+  .oneDish {
+    margin: 5px;
+    padding: 0%;
+    width: 150px;
+
+
+  }
+  .recepyCard {
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+  .oneDish h4 {
+    font-size: 12px;
+  }
+  .oneDish span {
+    font-size: 9px;
+    padding: 0%;
+  }
+  .oneDish li {
+    line-height: 70%;
+  }
+  .oneDish ul {
+    width: 100%;
+    list-style: none;
+  }
+  .oneDish button {
+    font-size: 9px;
+    width: 60px;
+
+  }
+  footer {
+    height: 35px;
+    position: fixed;
+  }
+  header {
+    height: 35px;
+  }
+  .footer .logo {
+    width: 35px;
+    height: 35px;
+  }
+  .smallLetters {
+    font-size: 8px;
+  }
+  .iconSize {
+    width: 12px;
+    height: 12px;
+  }
+  .smallList {
+    position: absolute;
+    background-color: rgb(206, 201, 201, 0.8);
+    width: 100%;
+    top:25px;
+    left: 0%;
+    z-index: 1;
+  }
+  .main {
+    margin-top: 0%;
+    margin-bottom: 250px;
+  }
+  .marginTop {
+    margin-top: 50px;
+  }
+
 }

@@ -23,7 +23,7 @@ const Main = () => {
 const DefaultMain = () => {
     const history = useHistory()
     return(
-        <div className = "createDishForm paddingOver">
+        <div className = "createDishForm paddingOver marginTop">
             <p>Привіт! Ласкаво просимо на сторінку ЩироСмакуй. Ми за те,
                 щоб щиро ділитися рецептами та зручно складати списки продуктів
                 для найщиріших страв. А в цьому допоможе наш сервіс. 

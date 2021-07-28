@@ -29,6 +29,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 const CToBasket = connect(mapStateToProps, mapDispatchToProps)(ToBasket);
 
 const CoulumnMenu = () => {
+
     return(
         <div>
                 <ul className = "smallBorder flexCoulumn absoluteMenu greyBachground">
@@ -55,8 +56,8 @@ const CoulumnMenu = () => {
 const TabletMenu = () => {
     const [show, setShow] = useState(false);
     return(
-        <div className = "forSmallSize">
-            <img onClick = {() => setShow(!show)} alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
+        <div onClick = {() => setShow(!show)} className = "forSmallSize">
+            <img alt="logo"className="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
             {show && <CoulumnMenu/>}
         </div>
 
@@ -91,7 +92,7 @@ const BigMenu = () => {
 const Header = () => {
 
     return(
-        <header className = "spaceBetween zIndexUp borderBottom">
+        <header className = "footer spaceBetween zIndexUp borderBottom">
             <BigMenu/>
             <TabletMenu/>
             <CToBasket/>
