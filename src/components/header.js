@@ -31,24 +31,29 @@ const CToBasket = connect(mapStateToProps, mapDispatchToProps)(ToBasket);
 const CoulumnMenu = () => {
 
     return(
-        <div>
-                <ul className = "smallBorder flexCoulumn absoluteMenu greyBachground">
-                    <li className = "borderBottom">
-                        <Link to = "/">
-                            На головну
-                        </Link>
-                    </li>
-                    <li className = "borderBottom">
-                        <Link to = "/dishes-list/">
-                            Обрати смачнючі страви
-                        </Link>
-                    </li>
-                    <li className = "borderBottom">
-                        <Link to = "/create-dish/">
-                            Додати смачнючу страву
-                        </Link>
-                    </li>
-                </ul>
+        <div className="columnMenu">
+            <ul className = "smallBorder flexCoulumn absoluteMenu greyBachground">
+                <li className = "borderBottom">
+                    <Link to = "/">
+                        На головну
+                    </Link>
+                </li>
+                <li className = "borderBottom">
+                    <Link to = "/dishes-list/">
+                        Обрати смачнючі страви
+                    </Link>
+                </li>
+                <li className = "borderBottom">
+                    <Link to = "/create-dish/">
+                        Додати смачнючу страву
+                    </Link>
+                </li>
+                <li className = "borderBottom">
+                    <Link to = "/create-message/">
+                        Додати відгук
+                    </Link>
+                </li>
+            </ul>
         </div>
     )
 }
@@ -56,7 +61,7 @@ const CoulumnMenu = () => {
 const TabletMenu = () => {
     const [show, setShow] = useState(false);
     return(
-        <div onClick = {() => setShow(!show)} className = "forSmallSize">
+        <div onClick = {() => setShow(!show)} className = "">
             <img alt="logo"className="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
             {show && <CoulumnMenu/>}
         </div>
@@ -64,37 +69,67 @@ const TabletMenu = () => {
     )
 }
 
-const BigMenu = () => {
+const ToFastStart = () => {
+    const [count, changeCount] = useState(1);
     return(
-        <div className = "divVertical forBigSize">
-                <Link className = "" to = "/">
-                    <img alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
-                </Link>
-
-
-                <ul className = "flexRow">
-                    <li>
-                        <Link to = "/dishes-list/">
-                            Обрати смачнючі страви
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to = "/create-dish/">
-                            Додати смачнючу страву
-                        </Link>
-                    </li>
-                </ul>
+        <div className="toFastStart  smallLetters flexColumn noMargin">
+            <div>
+                <span className="marginOverSmall">Кількість блюд</span>
+                <select onChange = {(e) => changeCount(e.target.value)}> 
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
             </div>
+            <button onClick={() => console.log(count)}>Запропонуйте</button>
+        </div>
     )
 }
+
+// const BigMenu = () => {
+//     return(
+//         <div className = "divVertical forBigSize">
+//                 <Link className = "" to = "/">
+//                     <img alt="logo" src="../images/body/32399bentobox_98893.png" width="50" height="50"/>
+//                 </Link>
+
+
+//                 <ul className = "flexRow">
+//                     <li>
+//                         <Link to = "/dishes-list/">
+//                             Обрати смачнючі страви
+//                         </Link>
+//                     </li>
+//                     <li>
+//                         <Link to = "/create-dish/">
+//                             Додати смачнючу страву
+//                         </Link>
+//                     </li>
+//                     <li>
+//                         <Link to = "/create-message/">
+//                             Додати відгук
+//                         </Link>
+//                     </li>
+//                 </ul>
+//             </div>
+//     )
+// }
 
 
 const Header = () => {
 
     return(
         <header className = "footer spaceBetween zIndexUp borderBottom">
-            <BigMenu/>
-            <TabletMenu/>
+            {/* <BigMenu/> */}
+            <div className="flexRow left">
+                <TabletMenu/>
+                <ToFastStart/>
+            </div>
             <CToBasket/>
 
         </header>

@@ -35,10 +35,10 @@ const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
 
                 {recepy && <Recepy recepy = {dish.dish.comment} onClose = {openRecepy}></Recepy>}
             </div>
-            {dish.dish.comment && <button className="forBigSize" disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
+            {dish.dish.comment && <button className="forBigSize greenButton" disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
 
             <div className = "forSmallSize">
-                <button disabled={ingredients || recepy} onClick = {() => openIngredients(!ingredients)}>Ігредієнти</button>
+                <button className="greenButton" disabled={ingredients || recepy} onClick = {() => openIngredients(!ingredients)}>Ігредієнти</button>
                 {ingredients &&
                     <div className = "smallList paddingOver">
                         <ul >
@@ -56,13 +56,13 @@ const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
                         </div>
                     </div>
                 }
-                {dish.dish.comment && <button disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
+                {dish.dish.comment && <button className="greenButton" disabled = {recepy} onClick = {() => openRecepy(true)}>Докладніше</button>}
                 {recepy && <Recepy recepy = {dish.dish.comment} onClose = {openRecepy}></Recepy>}
             </div>
             
-                <button onClick = {() =>  {
+                <button className = {basket[dish.id] && "yellowButton"} onClick = {() =>  {
                         basket[dish.id] ? dishOff(dish.id, dish.dish) : putDish(dish.id, dish.dish);                           
-                }}>{basket[dish.id] ? "Не готуватиму!" : "Готуватиму!" }</button>
+                }}>{basket[dish.id] ? "Не хочу!" : "Хочу!" }</button>
 
         </div>
     )

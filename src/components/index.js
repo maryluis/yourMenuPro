@@ -7,7 +7,8 @@ import CDishList from "./dishList";
 import Main from "./Main";
 import CBasket from "./basket";
 import CShopList from "./shopList";
+import MessageForm from "./messageForm";
 
 
 
-export {OneDish, CShopList, Main, CBasket, CDishForm, COneIngredient, Header, Footer, CDishList};
+export {OneDish, MessageForm, CShopList, Main, CBasket, CDishForm, COneIngredient, Header, Footer, CDishList};

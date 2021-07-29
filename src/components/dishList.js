@@ -1,25 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { actionGetDishes, actionStandartList, asyncDishAdd, clearDishes, asyncDishDelete } from '../redux';
 import { OneDish } from '.';
 import { bindActionCreators } from 'redux';
-import { objToArr, delay } from '../tools';
+import { objToArr } from '../tools';
 
 
 
     const DishList = ({dishes, createList, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
-        const [isLoading, changeLoad] = useState(false);
-        useEffect(() => { 
-            changeLoad(true);
-            delay(5000);
-            getData()
-            changeLoad(false);
 
-        }, [getData])
+         useEffect( () => { 
+             getData()
+        }, [getData]);
+
     return(
-         <div className = "dishList flexRow flexWrap marginForSmall">
-        {isLoading && <div className="spinner-grow text-secondary spinnetWidth" role="status"/>}
-            {!isLoading && dishes && dishes.map((dish) => 
+         <div className = "dishList flexRow flexWrap marginForSmall" >
+        {/* {isLoading && <div className="spinner-grow text-secondary spinnetWidth" role="status"/>} */}
+        {dishes && dishes.map((dish) => 
                 <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} goodsArr = {dish.dish.ingredients} dishOff = {dishOffBask} state = {state.promiseData.dishes} putDish = {dishToBask} comment = {dish.dish.comment}/>)}
         </div>
     )

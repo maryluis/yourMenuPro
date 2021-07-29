@@ -1,6 +1,7 @@
 import { CDishList, CDishForm, CBasket } from ".";
 import {Route, Switch, useHistory} from 'react-router-dom';
 import CShopList from "./shopList";
+import { MessageForm } from ".";
 
 
 
@@ -14,9 +15,22 @@ const Main = () => {
                 <Route path = "/create-dish/" component ={CDishForm}/>
                 <Route path = "/dishes-bask" component ={CBasket}/>
                 <Route path = "/shop-list/" component ={CShopList}/>
+                <Route path = "/create-message/" component ={MessageForm}/>
                 <Route path = "/" component ={DefaultMain} exact/>
+                <Route component = { NotFound } exact/>
             </Switch>
         </main>
+    )
+}
+
+
+const NotFound = () => {
+    const history = useHistory()
+    return(
+        <div className = "createDishForm paddingOver marginTop">
+            <p>Ой, здається ви щось заблукали. Спробуйте іншу сторінку.</p>
+            <button onClick={() => history.push("/")}>На головну</button>
+        </div>
     )
 }
 
