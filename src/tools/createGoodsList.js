@@ -55,7 +55,6 @@ function getTitles(obj) {
 }
 
 function standartList(obj) {
-
     let titles = getTitles(obj);
     let menuIngr = getIngredients(obj);
     let newIngr = sortBySomething(menuIngr, "goodType");
@@ -67,4 +66,4 @@ function standartList(obj) {
 
 
 
-export {standartList};
+export {standartList, getTitles, sortBySomething, getIngredients, shortList};

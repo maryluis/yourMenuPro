@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { actionGetDishes, actionStandartList, asyncDishAdd, clearDishes, asyncDishDelete } from '../redux';
+import { actionGetDishes, asyncDishAdd, asyncDishDelete } from '../redux';
 import { OneDish } from '.';
 import { bindActionCreators } from 'redux';
 import { objToArr } from '../tools';
 
 
 
-    const DishList = ({dishes, createList, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
+    const DishList = ({dishes, clearBask, getData, bask, state, dishToBask, dishOffBask}) => {
 
          useEffect( () => { 
              getData()
@@ -32,8 +32,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     getData: actionGetDishes,
     dishToBask: asyncDishAdd,
     dishOffBask: asyncDishDelete,
-    clearBask: clearDishes,
-    createList: actionStandartList
 }, dispatch);
 
 const CDishList = connect(mapStateToProps, mapDispatchToProps)(DishList);

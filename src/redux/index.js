@@ -3,7 +3,8 @@ import {goodsCreator, goodAdd, asyncGoodAdd} from "./goodsCreator";
 import {SagaMiddleware, rootSaga} from "../saga";
 import {dishesGetter, actionGetDishes, actionPutDishes} from "./dishesGetter";
 import {dishesBasket, asyncDishAdd, dishAdd, asyncDishDelete, dishDelete, asyncClearDishes, clearDishes} from "./dishesBasket";
-import {dishesListReducer, actionPutStandartList, actionStandartList} from "./dishesList";
+import {dishesListReducer, actionPutStandartList, actionStandartList, actionFastList, actionPutFastList} from "./dishesList";
+import {fastCountDish, asyncChangeCount, changeCount} from "./fastCountDish";
 
 
 
@@ -14,10 +15,14 @@ const store = createStore(combineReducers({
     dishesBask: dishesBasket,
     newGoods: goodsCreator, 
     shopList: dishesListReducer,
+    countFastList: fastCountDish,
 }), applyMiddleware(SagaMiddleware))
 
 
 SagaMiddleware.run(rootSaga) //запуск
 
-export {store, goodsCreator, asyncGoodAdd, goodAdd, asyncDishDelete, asyncClearDishes, dishesGetter, actionGetDishes, actionPutDishes, dishesBasket, dishAdd, asyncDishAdd, dishDelete, clearDishes, dishesListReducer, actionPutStandartList, actionStandartList};
+export {store, goodsCreator, fastCountDish, actionFastList, actionPutFastList,
+    asyncChangeCount, changeCount, asyncGoodAdd, goodAdd, asyncDishDelete,
+     asyncClearDishes, dishesGetter, actionGetDishes, actionPutDishes, dishesBasket, dishAdd,
+      asyncDishAdd, dishDelete, clearDishes, dishesListReducer, actionPutStandartList, actionStandartList};
 

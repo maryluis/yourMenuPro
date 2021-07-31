@@ -3,7 +3,8 @@ import createSagaMiddleware from "redux-saga";
 import {delay, getDishes} from "../tools";
 import {actionPutDishes, goodAdd} from "../redux";
 import checkDishBask from "./sagaBasketDish";
-import {dishesListChecker} from "./sagaStandartList"
+import {dishesListChecker} from "./sagatList";
+import checkCountSaga from './sagaChangeCount';
 
 
 
@@ -31,7 +32,11 @@ function* dishesChecker(){ //watcher saga
 
 function* rootSaga(){ //корневая
     yield all([
-        checkIngr(), dishesChecker(), checkDishBask(), dishesListChecker()
+        checkIngr(), 
+        dishesChecker(), 
+        checkDishBask(), 
+        dishesListChecker(), 
+        checkCountSaga()
     ])
 }
 

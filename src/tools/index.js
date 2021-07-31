@@ -2,7 +2,8 @@ import {ingredients, dish, objToArr} from "./dishesCreator";
 import addDish from "./addNewDish";
 import getDishes from "./getDishes";
 import { checkInclude } from "./checkers";
-import {standartList} from "./createGoodsList";
+import {standartList, getTitles, sortBySomething, getIngredients, shortList} from "./createGoodsList";
+import fastListTool from "./fastListTool";
 
 
 
@@ -20,4 +21,4 @@ function newCopyObj(obj) {
 
 
 
-export {ingredients, newCopyObj, standartList, objToArr, checkInclude, dish, delay, url, addDish, getDishes};
+export {ingredients, fastListTool, getTitles, sortBySomething, getIngredients, shortList, newCopyObj, standartList, objToArr, checkInclude, dish, delay, url, addDish, getDishes};

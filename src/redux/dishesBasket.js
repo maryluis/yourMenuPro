@@ -18,8 +18,7 @@ function dishesBasket(state, {type, id, dish}) {
     return state
 }
 
-const asyncDishAdd = (id, dish) => ({
-    
+const asyncDishAdd = (id, dish) => ({  
     type: "ASYNC_DISH_ADD",
     id: id,
     dish: dish
