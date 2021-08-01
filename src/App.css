@@ -52,6 +52,7 @@ a {
   border: 2px solid black;
   border-top: none;
 }
+
 .marginBottom {
   margin-bottom: 20px;
 }
@@ -65,11 +66,7 @@ a:hover {
 .zIndexUp {
   z-index: 2;
 }
-.spinnerWidth {
-  margin-top: 100px;
-  width: 150px;
-  height: 150px;
-}
+
 .textCenter {
   display: flex;
   text-align: center;

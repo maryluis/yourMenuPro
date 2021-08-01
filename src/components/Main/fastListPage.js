@@ -8,7 +8,7 @@ import { useHistory } from 'react-router';
 
 
 
-const FastListPage = ({dishes, bask, dishOffBask, dishAdd}) => {
+const FastListPage = ({dishes, bask, state, dishOffBask, dishAdd}) => {
     const history = useHistory();
     useEffect(() => !dishes.length && history.push('/'), [dishes, history])
     return(
@@ -42,8 +42,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
     dishOffBask: asyncDishDelete,
     dishAdd: asyncDishAdd,
-    //clearBask: asyncClearDishes,
-    //createList: actionStandartList
 }, dispatch);
 
 const CFastListPage = connect(mapStateToProps, mapDispatchToProps)(FastListPage);

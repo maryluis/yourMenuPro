@@ -18,7 +18,7 @@ const OneDish = ({basket, dish, dishOff, putDish}) => {
     const [ingredients, openIngredients] = useState(false);
 
     return (
-        <div className = "createDishForm oneDish marginOver spaceBetweenCoulum paddingOver">
+        <div className = "smallBorder borderTop createDishForm oneDish marginOver spaceBetweenCoulum paddingOver">
             <h4 className = "textCenter">{dish.dish.name}</h4>
 
             <div className = "forBigSize">

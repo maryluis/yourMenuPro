@@ -6,7 +6,7 @@ import {dishesBasket, asyncDishAdd, dishAdd, asyncDishDelete, dishDelete, asyncC
 import {dishesListReducer, actionPutStandartList, actionStandartList, actionFastList, actionPutFastList} from "./dishesList";
 import {fastCountDish, asyncChangeCount, changeCount} from "./fastCountDish";
 import {dishesFastList, asyncFastDish, fastDish} from "./fastDishList";
-
+import { dishesTypes } from './typeReducer';
 
 
 
@@ -17,6 +17,7 @@ const store = createStore(combineReducers({
     shopList: dishesListReducer,
     countFastList: fastCountDish,
     fastDishList: dishesFastList,
+    typesOfDish: dishesTypes,
 }), applyMiddleware(SagaMiddleware))
 
 
@@ -26,5 +27,5 @@ export {store, goodsCreator, fastCountDish, actionFastList, actionPutFastList,
     asyncChangeCount, changeCount, asyncGoodAdd, goodAdd, asyncDishDelete,
      asyncClearDishes, dishesGetter, actionGetDishes, actionPutDishes, dishesBasket, dishAdd,
       asyncDishAdd, dishDelete, clearDishes, dishesListReducer, actionPutStandartList, 
-      dishesFastList, asyncFastDish, fastDish, actionStandartList};
+      dishesFastList, dishesTypes, asyncFastDish, fastDish, actionStandartList};
 

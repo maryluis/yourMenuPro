@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState } from "react";
+import {addComment} from "../../tools";
+import { useHistory } from "react-router";
 
 const MessageForm = () => {
     const [name, changeName] = useState(null);
     const [comment, changeComment] = useState(null);
+    const history = useHistory();
 
     return(
     <div className="createDishForm marginBottom">
@@ -10,7 +13,13 @@ const MessageForm = () => {
         <input type="text" className = "mainInput" placeholder="Ваше ім'я"onChange = {(e) => changeName(e.target.value)}/>
         <textarea onChange = {(e) => changeComment(e.target.value)} placeholder="Комментар"></textarea>
 
-        <button onClick={() => console.log(`${name}: ${comment}`)}>Надіслати</button>
+        <button disabled={!name || !comment} onClick={() => { 
+            let obj = {};
+            obj.name = name;
+            obj.comment = comment;
+            addComment(obj);
+            history.push('/success/')
+            }}>Надіслати</button>
     </div>
     )}
 

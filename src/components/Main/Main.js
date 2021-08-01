@@ -16,6 +16,7 @@ const Main = () => {
                 <Route path = "/shop-list/" component ={CShopListPage}/>
                 <Route path = "/fast-list/" component ={CFastListPage}/>
                 <Route path = "/create-message/" component ={MessageForm}/>
+                <Route path = "/success/" component ={Success}/>               
                 <Route path = "/" component ={DefaultMain} exact/>
                 <Route component = { NotFound } exact/>
             </Switch>
@@ -29,6 +30,17 @@ const NotFound = () => {
     return(
         <div className = "createDishForm paddingOver marginTop">
             <p>Ой, здається ви щось заблукали. Спробуйте іншу сторінку.</p>
+            <button onClick={() => history.push("/")}>На головну</button>
+        </div>
+    )
+}
+
+
+const Success = () => {
+    const history = useHistory()
+    return(
+        <div className = "createDishForm paddingOver marginTop">
+            <p>Дякуємо за відгук</p>
             <button onClick={() => history.push("/")}>На головну</button>
         </div>
     )

@@ -1,14 +1,15 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { asyncChangeCount, actionFastList } from '../../redux';
+import { actionFastList } from '../../redux';
 import { useHistory } from 'react-router';
 import { delay } from '../../tools';
+import { useState } from 'react';
 
 
-const ToFastStart = ({state, count, changeCount, getList, classStyle}) => {
+const ToFastStart = ({state, getList, classStyle}) => {
 
     const history = useHistory();
-    
+    const [count, changeCount] = useState(1);
     return(
         <div className={`smallLetters flexColumn noMargin ${classStyle}`}>
             <div>
@@ -36,12 +37,10 @@ const ToFastStart = ({state, count, changeCount, getList, classStyle}) => {
 }
 
 const mapStateToProps = state => ({
-    count: state.countFastList.count,
     state:state,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    changeCount: asyncChangeCount,
     getList: actionFastList,
 }, dispatch);
 

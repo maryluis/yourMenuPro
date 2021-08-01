@@ -1,8 +1,3 @@
-//1) Экшн создать стандарт лист.
-//2) Сага вызывает воркер
-//3) елд стандартЛист
-//4) пут адд лист
-
 
 
 function shortList(arr) {
@@ -13,7 +8,7 @@ function shortList(arr) {
         let isHere = false;
         for(let j = i+1; j < firstList.length; j++) {
 
-            if(firstList[i].title === firstList[j].title) {
+            if(firstList[i].title.toUpperCase() === firstList[j].title.toUpperCase()) {
                 if(firstList[i].ofWhat === firstList[j].ofWhat) {
                     oneIngr.howMany = +oneIngr.howMany + +firstList[j].howMany;
                     firstList.splice(j, 1);
