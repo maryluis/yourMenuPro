@@ -13,7 +13,7 @@ const Recepy = ({recepy, onClose}) => {
 }
 
 
-const OneDish = ({basket, dish, dishOff, putDish, dishClear, state}) => {
+const OneDish = ({basket, dish, dishOff, putDish}) => {
     const [recepy, openRecepy] = useState(false);
     const [ingredients, openIngredients] = useState(false);
 

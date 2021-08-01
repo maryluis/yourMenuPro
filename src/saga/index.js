@@ -5,6 +5,7 @@ import {actionPutDishes, goodAdd} from "../redux";
 import checkDishBask from "./sagaBasketDish";
 import {dishesListChecker} from "./sagatList";
 import checkCountSaga from './sagaChangeCount';
+import checkFastDish from "./sagaFastDishes";
 
 
 
@@ -32,11 +33,12 @@ function* dishesChecker(){ //watcher saga
 
 function* rootSaga(){ //корневая
     yield all([
+        checkFastDish(),
         checkIngr(), 
         dishesChecker(), 
         checkDishBask(), 
         dishesListChecker(), 
-        checkCountSaga()
+        checkCountSaga(),
     ])
 }
 

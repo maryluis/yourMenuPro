@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { actionGetDishes, asyncDishAdd, asyncDishDelete } from '../redux';
-import { OneDish } from '.';
+import { actionGetDishes, asyncDishAdd, asyncDishDelete } from '../../redux';
+import { OneDish } from '..';
 import { bindActionCreators } from 'redux';
-import { objToArr } from '../tools';
+import { objToArr } from '../../tools';
 
 
 

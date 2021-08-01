@@ -58,7 +58,7 @@ const Header = () => {
             {/* <BigMenu/> */}
             <div className="flexRow left">
                 <TabletMenu/>
-                <CToFastStart/>
+                <CToFastStart classStyle="toFastStartHeader" />
             </div>
             <CToBasket/>
 

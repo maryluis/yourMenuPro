@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
-import {asyncGoodAdd} from "../redux"
+import {asyncGoodAdd} from "../../redux"
 import {bindActionCreators, } from 'redux';
+
 
 
 

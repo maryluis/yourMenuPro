@@ -1,6 +1,6 @@
 import {standartList} from "../tools/createGoodsList";
 import { put, takeEvery, takeLeading} from 'redux-saga/effects';
-import { actionPutStandartList, actionPutFastList } from "../redux";
+import { actionPutStandartList, actionPutFastList, asyncFastDish } from "../redux";
 import { fastListTool } from "../tools";
 
 
@@ -13,7 +13,9 @@ function* dishesStandart(obj) {
 
 function* dishesFast(obj) {
     const data = yield fastListTool(obj.data);
-    yield put(actionPutFastList(data));
+    yield put(asyncFastDish(data));
+    const list = yield standartList(data);
+    yield put(actionPutFastList(list));
 }
 
 

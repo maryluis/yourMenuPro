@@ -25,12 +25,15 @@ header {
 .left {
   position: relative;
 }
-.toFastStart {
+.width {
+  width:100%
+}
+.toFastStartHeader {
   position: absolute;
   left: 55px;
   width: 120px;
 }
-.toFastStart button {
+.toFastStartHeader button {
   height: 20px;
 }
 footer {
@@ -76,7 +79,9 @@ a:hover {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
+.fastListBottom span {
+  font-size: 20px;
+}
 .forSmallSize {
   display: none;
 }
@@ -134,6 +139,7 @@ button {
 button:hover {
   background-color: rgb(175, 173, 168);
 }
+
 .btnCenter {
   display: flex;
   justify-content: center;
@@ -294,6 +300,7 @@ header li {
   h2 {
     font-size: 20px;
   }
+
   .forBigSize {
     display: none;
   }
@@ -373,14 +380,14 @@ header li {
   .marginTop {
     margin-top: 50px;
   }
-  .toFastStart {
+  .toFastStartHeader {
     position: absolute;
     left: 35px;
     width: 100px;
     display: flex;
 
   }
-  .toFastStart button {
+  .toFastStartHeader button {
     height: 15px;
     position: absolute;
     top: 10px;

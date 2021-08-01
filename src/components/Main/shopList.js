@@ -1,11 +1,9 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {useHistory} from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 const ShopList = ({list}) => {
-    const history = useHistory();
-    useEffect(() => !list.titles && history.push("/"),[list, history])
+
     return(
         <div className = "createDishForm">
             <h3>Список блюд</h3>
@@ -32,7 +30,7 @@ const ShopList = ({list}) => {
 }
 
 const mapStateToProps = state => ({
-    list: state.shopList
+    list: state.shopList,
     
 });
 
@@ -40,5 +38,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 const CShopList = connect(mapStateToProps, mapDispatchToProps)(ShopList);
+
+
 
 export default CShopList;

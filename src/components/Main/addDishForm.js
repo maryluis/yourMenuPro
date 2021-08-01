@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators, } from 'redux';
-import {COneIngredient} from "./index";
-import {dish, addDish, checkInclude} from "../tools";
+import {COneIngredient} from "../index";
+import {dish, addDish, checkInclude} from "../../tools";
 import {useHistory} from 'react-router-dom';
 
 

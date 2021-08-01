@@ -1,6 +1,7 @@
 import { objToArr } from "./dishesCreator";
 import getDishes from "./getDishes";
-import {standartList} from ".";
+
+
 
 
 
@@ -15,8 +16,7 @@ async function fastListTool(count) {
         newObj[oneDish.id] = oneDish.dish;
         dishesArr.splice(index, 1)
     }
-    let newList = standartList(newObj)
-    return newList;
+    return newObj;
 }
 
 export default fastListTool;

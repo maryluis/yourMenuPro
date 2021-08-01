@@ -1,7 +1,6 @@
-import { CDishList, CDishForm, CBasket } from ".";
 import {Route, Switch, useHistory} from 'react-router-dom';
-import CShopList from "./shopList";
-import { MessageForm } from ".";
+import { MessageForm, CShopListPage, CDishList, CDishForm, CBasket, CFastListPage } from "../";
+
 
 
 
@@ -14,7 +13,8 @@ const Main = () => {
                 <Route path = "/dishes-list/" component ={CDishList}/>
                 <Route path = "/create-dish/" component ={CDishForm}/>
                 <Route path = "/dishes-bask" component ={CBasket}/>
-                <Route path = "/shop-list/" component ={CShopList}/>
+                <Route path = "/shop-list/" component ={CShopListPage}/>
+                <Route path = "/fast-list/" component ={CFastListPage}/>
                 <Route path = "/create-message/" component ={MessageForm}/>
                 <Route path = "/" component ={DefaultMain} exact/>
                 <Route component = { NotFound } exact/>
@@ -58,4 +58,4 @@ const DefaultMain = () => {
     )
 }
 
-export default Main;
+export {Main, NotFound};

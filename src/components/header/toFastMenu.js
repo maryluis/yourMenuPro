@@ -1,12 +1,16 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { asyncChangeCount, actionFastList } from '../../redux';
+import { useHistory } from 'react-router';
+import { delay } from '../../tools';
 
 
-const ToFastStart = ({state, count, changeCount, getList}) => {
+const ToFastStart = ({state, count, changeCount, getList, classStyle}) => {
+
+    const history = useHistory();
     
     return(
-        <div className="toFastStart  smallLetters flexColumn noMargin">
+        <div className={`smallLetters flexColumn noMargin ${classStyle}`}>
             <div>
                 <span className="marginOverSmall">Кількість блюд</span>
                 <select onChange = {(e) => changeCount(e.target.value)}> 
@@ -20,8 +24,13 @@ const ToFastStart = ({state, count, changeCount, getList}) => {
                     <option value="8">8</option>
                 </select>
             </div>
-            <button onClick={() => getList(count)}>Запропонуйте</button>
-            <button onClick={() => console.log(state)}>check</button>
+            <button onClick={async () => { 
+                await getList(count);
+                await delay(1000);
+                history.push("/fast-list/");
+                }
+            }
+                >Запропонуйте</button>
         </div>
     )
 }

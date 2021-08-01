@@ -1,9 +1,9 @@
-import { OneDish } from '.';
+import { OneDish } from '../';
 import {Link, useHistory} from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { objToArr } from '../tools';
-import { actionStandartList, asyncClearDishes, asyncDishDelete } from '../redux';
+import { objToArr } from '../../tools';
+import { actionStandartList, asyncClearDishes, asyncDishDelete } from '../../redux';
 
 const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
     const history = useHistory();
