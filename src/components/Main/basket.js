@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { objToArr } from '../../tools';
 import { actionStandartList, asyncClearDishes, asyncDishDelete } from '../../redux';
+import CToFastStart from '../header/toFastMenu';
 
 const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
     const history = useHistory();
@@ -28,10 +29,11 @@ const Basket = ({dishes, bask, state, createList, clearBask, dishOffBask}) => {
             <div className="createDishForm paddingOver">
                 <p>
                     Ой, ви ще не обрали жодного блюда. 
-                    Перейдіть до списка рецептів, або....(далі буде)
+                    Перейдіть до списка рецептів, підберіть рандомно
 
                 </p>
                 <button className = "flexCenter"><Link to = "/dishes-list/">До списка блюд</Link></button>
+                <CToFastStart classStyle="fastListBottom"/>
                 
             </div>}
         </>

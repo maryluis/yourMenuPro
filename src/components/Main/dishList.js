@@ -11,7 +11,7 @@ import { objToArr, sortObjToObj } from '../../tools';
         return(
             <div className="flexColumn flexCenter width createDishForm">
                 <h3>{typeName}</h3>
-                <div className="flexRow">
+                <div className="flexRow flexWrap">
                     {dishArr.map((dish) => 
                     
                     <OneDish key = {dish.id} dish = {dish}  basket = {bask} dishClear = {clearBask} 

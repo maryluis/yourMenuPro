@@ -11,8 +11,8 @@ const ToFastStart = ({state, getList, classStyle}) => {
     const history = useHistory();
     const [count, changeCount] = useState(1);
     return(
-        <div className={`smallLetters flexColumn noMargin ${classStyle}`}>
-            <div>
+        <div className={`smallLetters flexRow noMargin ${classStyle}`}>
+            <div className="flexColumn marginOverSmall">
                 <span className="marginOverSmall">Кількість блюд</span>
                 <select onChange = {(e) => changeCount(e.target.value)}> 
                     <option value="1">1</option>

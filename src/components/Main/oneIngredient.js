@@ -36,6 +36,7 @@ const OneIngredient = ({ onAdd, id}) => {
                 <select onChange = {(e) => changeWhat(e.target.value)}> 
                     <option>гр</option>
                     <option>шт</option>
+                    <option>мл</option>
                     <option>банка</option>
                     <option>зубчиків</option>
                     <option>пачка</option>

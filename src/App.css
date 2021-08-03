@@ -30,10 +30,14 @@ header {
 }
 .toFastStartHeader {
   position: absolute;
+  top:-3px;
   left: 55px;
-  width: 120px;
+  width: 200px;
 }
 .toFastStartHeader button {
+  position: absolute;
+  right: 100px;
+  top: 5px;
   height: 20px;
 }
 footer {
@@ -79,10 +83,28 @@ a:hover {
 .fastListBottom span {
   font-size: 20px;
 }
+.fastListBottom {
+  height: 65px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.fastListBottom button {
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
 .forSmallSize {
   display: none;
 }
-
+.toFastStartHeader {
+  width: 300px;
+}
+.toFastStartHeader button {
+  height: 35px;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -370,6 +392,18 @@ header li {
     left: 0%;
     z-index: 1;
   }
+  .yellowButton:hover {
+    background-color: rgb(141, 94, 7);
+  }
+  button:hover {
+    background-color: rgb(99, 97, 92);
+  }
+  button:focus {
+    background-color: rgb(99, 97, 92);
+  }
+  .yellowButton:focus {
+    background-color: none;
+  }
   .main {
     margin-top: 0%;
     margin-bottom: 250px;
@@ -378,23 +412,28 @@ header li {
     margin-top: 50px;
   }
   .toFastStartHeader {
+    display: flex;
+    width: 165px;
     position: absolute;
     left: 35px;
-    width: 100px;
-    display: flex;
-
+    top: -7px;
+  }
+  .toFastStartHeader select {
+    width: 55px;
+    position: absolute;
+    left: 10px;
+    top: 25px;
   }
   .toFastStartHeader button {
-    height: 15px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    right: 0%;
+    height: 25px;
   }
   .columnMenu {
     width: 150px;
   }
   .columnMenu li {
     font-size: 10px;
+    height: 35px;
   }
 
 }
